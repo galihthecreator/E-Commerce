@@ -15,7 +15,7 @@ def create_daily_orders_df(df):
 
 # Load
 parent_path = Path(__file__).parent
-file_path = parent_path / "main_data.csv"
+file_path = parent_path / "all_data.csv"
 
 # Logika pemeriksaan file untuk debugging di dashboard
 if not file_path.exists():
