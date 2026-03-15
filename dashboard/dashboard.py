@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+import os
 st.set_page_config(page_title='E-Commerce Dashboard', layout='wide')
 
 def create_daily_orders_df(df):
@@ -14,8 +14,9 @@ def create_daily_orders_df(df):
   return daily_orders_df
 
 # Load
-all_df = pd.read_csv(f'C:\\Users\\Pongo\\OneDrive\\Desktop\\datadiri\\submission\\analisis data\\all_data.csv')
-all_df['order_purchase_timestamp'] = pd.to_datetime(all_df['order_purchase_timestamp'])
+current_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = pd.read_csv(os.path.join(current_dir, 'all_data.csv'))
+all_df = pd.read_csv(file_path)
 
 with st.sidebar:
     st.image("https://github.com/dicodingacademy/assets/raw/main/logo.png")
