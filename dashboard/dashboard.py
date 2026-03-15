@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import os
+from pathlib import Path
 st.set_page_config(page_title='E-Commerce Dashboard', layout='wide')
 
 def create_daily_orders_df(df):
@@ -14,9 +14,15 @@ def create_daily_orders_df(df):
   return daily_orders_df
 
 # Load
-current_dir = os.path.dirname(os.path.abspath(__file__))
-file_path = pd.read_csv(os.path.join(current_dir, 'all_data.csv'))
-all_df = pd.read_csv(file_path)
+parent_path = Path(__file__).parent
+file_path = parent_path / "main_data.csv"
+
+# Logika pemeriksaan file untuk debugging di dashboard
+if not file_path.exists():
+    st.error(f"File tidak ditemukan: {file_path}")
+    st.info("udah bener belum pathnya?")
+else:
+    all_df = pd.read_csv(file_path)
 
 with st.sidebar:
     st.image("https://github.com/dicodingacademy/assets/raw/main/logo.png")
