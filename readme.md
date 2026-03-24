@@ -29,22 +29,25 @@ url.txt → tautan dashboard yang sudah dideploy di Streamlit Cloud.
 ⚙️ Cara Menjalankan Dashboard Secara Lokal
 
 1. Persiapkan Virtual Environment
-   bash
+   Buka terminal di folder proyek Anda, lalu jalankan perintah berikut:
    python -m venv venv
+
 2. Aktivasi Virtual Environment
-   Windows (PowerShell):
+   Pilih perintah yang sesuai dengan sistem operasi dan terminal yang Anda gunakan:
 
-bash
+Windows (PowerShell):
 .\venv\Scripts\Activate.ps1
+
 Windows (CMD):
-
-bash
 venv\Scripts\activate
-macOS/Linux:
 
-bash
-source venv/bin/activate 3. Instalasi Library
-bash
-pip install -r requirements.txt 4. Menjalankan Dashboard Streamlit
-bash
-streamlit run
+macOS/Linux:
+source venv/bin/activate
+
+3. Instalasi Library
+   Pastikan pip Anda sudah diperbarui, lalu instal semua dependency yang diperlukan:
+   pip install -r requirements.txt
+
+4. Menjalankan Dashboard Streamlit
+   Penting: Gunakan perintah di bawah ini untuk menjalankan aplikasi. Pastikan Anda berada di direktori utama proyek (luar folder dashboard):
+   streamlit run dashboard/dashboard.py
